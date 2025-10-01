@@ -1,11 +1,17 @@
 const express = require("express")
 const dbhandler = require("./dbhandler")  
+const { FORCE } = require("sequelize/lib/index-hints")
+
 
 const server = express()
 server.use(express.json())
 
 const port = 3000
 
+
+dbhandler.cars.sync({alter:true})
+dbhandler.manufacturers.sync({alter:true})
+dbhandler.owner.sync({alter:true})
 
 
 
@@ -53,21 +59,20 @@ server.get("/getowner", async (req, res) => {
  
    res.json(await dbhandler.owner.findAll({
       include: [{
-         model: dbhandler.manufacturers,
+         model: dbhandler.cars,
          attributes: ['model']
       }]
    })).end()
 })
 server.post("/createowner",async(req,res) =>{
-    await dbhandler.cars.create({
-     carid: req.body.carid,
-      name : req.body.name,
+    await dbhandler.owner.create({
+     carsid: req.body.carsid,
+     name : req.body.name,
      address : req.body.address,
      birthyear: req.body.birthyear
     })
-        res.status(201).json({ "message":"tulajdonos sikeresen letreheozva."}).end()
+    res.status(201).json({ "message":"tulajdonos sikeresen letrehozva."}).end()
 })
-
 server.delete("/deleteowner:id", async (req,res)=>{
     const id = req.params.id
 

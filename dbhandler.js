@@ -1,4 +1,4 @@
-const [Sequelize,Datatypes] = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const dbhandler = new Sequelize('data', 'root', '', {
     dialect: 'mysql',
     host: 'localhost'
@@ -6,82 +6,79 @@ const dbhandler = new Sequelize('data', 'root', '', {
 
 const carstable = dbhandler.define('cars', {
     id: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
         manufacturersid: {
-            type: Datatypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         model: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         
         power: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         makeyear: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         tyresize: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         }
 });
 const manufacturerstable = dbhandler.define('manufacturers', {
     id: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
         name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
-        power: {
-            type: Datatypes.INTEGER,
-            allowNull: false
-        },
+
         launchyear: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         country: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
          makeyear: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
 });
 const ownertable = dbhandler.define('owner', {
     id: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
         carsid: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
           name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         address: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
          birthyear: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
 });
