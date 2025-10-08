@@ -29,7 +29,7 @@ const carstable = dbhandler.define('cars', {
             allowNull: false
         },
         tyresize: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
 });

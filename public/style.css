@@ -1,0 +1,18 @@
+.row{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.row div{
+    background-color: aqua;
+    padding: 15px;
+    line-height: 1.5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px gray;
+}
+input, button{
+    padding:5px;
+    border-radius: 10px;
+    margin-top: 10px;
+}

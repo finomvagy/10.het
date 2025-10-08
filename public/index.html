@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="row">
+        <div> 
+            <h2>Gyártó</h2>
+            <input type="text" id="manufacturerNameInput" placeholder="Gyártó neve">
+            <input type="text" id="manufacturerLaunchYearInput" placeholder="Alapítási év">
+            <input type="text" id="manufacturerCountryInput" placeholder="Ország">
+            <input type="text" id="manufacturerMakeYearInput" placeholder="Gyártási év">
+            <button onclick="createManufacturer()">Létrehozás</button>
+            <ul id="manufacturerList"></ul>
+        </div>
+
+        <div> 
+           <h2>Autó</h2>
+           <input type="text" id="carManufacturerIdInput" placeholder="Gyártó ID">
+           <input type="text" id="carModelInput" placeholder="Modell">
+           <input type="text" id="carPowerInput" placeholder="Teljesítmény (LE)">
+           <input type="text" id="carMakeYearInput" placeholder="Gyártási év">
+           <input type="text" id="carTyreSizeInput" placeholder="Kerékméret (coll)">
+           <button onclick="createCar()">Létrehozás</button>
+           <ul id="carList"></ul>
+       </div>
+        <div>
+            <h2>Tulajdonos</h2>
+            <input type="text" id="ownerCarIdInput" placeholder="Autó ID">
+            <input type="text" id="ownerNameInput" placeholder="Név">
+            <input type="text" id="ownerAddressInput" placeholder="Cím">
+            <input type="text" id="ownerBirthYearInput" placeholder="Születési év">
+            <button onclick="createOwner()">Létrehozás</button>
+            <ul id="ownerList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
